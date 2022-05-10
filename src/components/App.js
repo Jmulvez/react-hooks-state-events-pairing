@@ -1,4 +1,7 @@
+import React from "react";
 import video from "../data/video.js";
+import Header from "./Header.js";
+import CommentList from "./CommentList.js";
 
 function App() {
   console.log("Here's your data:", video);
@@ -13,6 +16,8 @@ function App() {
         allowFullScreen
         title="Thinking in React"
       />
+      <Header title={video.title} views={video.views} createdAt={video.createdAt} upvotes={video.upvotes} downvotes={video.downvotes}/>
+      <CommentList comments={video.comments} id={video.comments.id} user={video.comments.user} comment={video.comments.comment}/>
     </div>
   );
 }
